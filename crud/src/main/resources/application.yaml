@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: crud
+  #conexion de base de datos
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/crud_db
+    username: root
+    password:
+#actualizacionde los datos automaticos
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+server:
+  port: 8081
