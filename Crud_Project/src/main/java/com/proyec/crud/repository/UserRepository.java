@@ -10,6 +10,4 @@ public interface UserRepository extends JpaRepository<User, UUID> {
 
     // Método derivado (recomendado)
     Optional<User> findByEmail(String email);
-
-
 }
