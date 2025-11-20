@@ -21,5 +21,6 @@ public class GlobalExceptionHandler {
         error.put("error", ex.getMessage());
 
         return new ResponseEntity<>(error, HttpStatus.CONFLICT);
+
     }
 }
