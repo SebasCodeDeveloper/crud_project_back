@@ -1,6 +1,5 @@
 package com.proyec.crud.service;
 
-import com.proyec.crud.entity.User;
 import com.proyec.crud.model.UserRq;
 import com.proyec.crud.model.UserRs;
 
