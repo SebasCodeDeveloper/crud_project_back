@@ -1,9 +1,9 @@
 package com.proyec.crud.controller;
 
-import com.proyec.crud.entity.User;
 import com.proyec.crud.model.UserRq;
 import com.proyec.crud.model.UserRs;
 import com.proyec.crud.service.UserService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,8 +13,8 @@ import java.util.UUID;
 
 @RestController
 @RequiredArgsConstructor
+@CrossOrigin("*")
 @RequestMapping("/api/users")
-
 public class UserController {
 
     private final UserService service;
@@ -42,7 +42,7 @@ public class UserController {
 
 
 @PutMapping ("/{id}")
-    public ResponseEntity<?> updateUser(@PathVariable UUID id, @RequestBody UserRq request ) {
+    public ResponseEntity<?> updateUser(@PathVariable UUID id, @RequestBody @Valid UserRq request ) {
         service.updateUser(id, request);
         return ResponseEntity.ok(service.updateUser(id, request));
     }

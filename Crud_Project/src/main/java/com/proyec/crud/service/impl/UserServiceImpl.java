@@ -57,7 +57,6 @@ User user = new User();
         User user = UserRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("El usuario no existe"));
         UserRepository.delete(user);
-        new UserRs("Usuario eliminado", user.getName());
     }
 
 
@@ -86,7 +85,7 @@ User user = new User();
 
     private UserRs toRs(User user){
         UserRs rs =  new UserRs();
-
+        rs.setId(user.getId().toString());
         rs.setName(user.getName());
         rs.setEmail(user.getEmail());
 
